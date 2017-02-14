@@ -4,4 +4,8 @@ public class Human implements Edible, Swimmable {
     return "Help I'm being eaten by a bear";
   }
 
+  public int nutritionalValue(){
+    return 10;
+  }
+
   }

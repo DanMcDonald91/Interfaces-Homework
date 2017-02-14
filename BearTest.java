@@ -7,11 +7,13 @@ public class BearTest {
   Bear bear;
   Salmon salmon;
   Human human;
+  Chicken chicken;
   @Before 
   public void before() {
     bear = new Bear("Baloo");
     human = new Human();
     salmon = new Salmon();
+    chicken = new Chicken();
   }
 
   @Test
@@ -50,6 +52,25 @@ public class BearTest {
     Salmon original = (Salmon)food;
     assertEquals("swimming", original.swim());
   }
+
+@Test
+public void canEatChicken(){
+  bear.eat(chicken);
+  assertEquals(bear.foodCount(), 1);
+}
+@Test
+public void canThrowUpChicken(){
+  bear.eat(chicken);
+  Edible food = bear.throwUp();
+  assertNotNull(food);
+  Chicken original = (Chicken)food;
+  assertEquals("CLUCK CLUCCK", original.cluck());
+}
+
+@Test
+public void totalNutritionBearFood(){
+  
+}
 
 
   }
